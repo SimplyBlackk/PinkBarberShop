@@ -1,4 +1,5 @@
-// Licznik klientów
+// Plik JavaScript - interaktywność strony
+// Animowany licznik klientów od 0 do 1200
 document.addEventListener("DOMContentLoaded", () => {
   const countEl = document.getElementById("client-count");
   const target = 1200;
@@ -16,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateCount();
 
-  // Tryb ciemny
+  // Obsługa trybu ciemnego (dark mode) z localStorage
   const darkModeToggle = document.getElementById("darkModeToggle");
   if (darkModeToggle) {
     if (localStorage.getItem("darkMode") === "enabled") {
@@ -35,8 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+// Inicjalizacja mapy Google z pinezką lokalizacji
 function initMap() {
-  const salon = { lat: 52.091882, lng: 17.005609 }; // przykładowe: Warszawa  52.091882, 17.005609
+  const salon = { lat: 52.091882, lng: 17.005609 };
 
   const map = new google.maps.Map(document.getElementById("googleMap"), {
     zoom: 15,
@@ -70,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(() => {
     index = (index + 1) % reviews.length;
     showReview(index);
-  }, 6000); // zmiana co 4 sekundy
+  }, 6000); // Automatyczna zmiana opinii co 6 sekund
 
   showReview(index);
 });
@@ -79,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const timeSelect = document.getElementById("time");
   const dateInput = document.getElementById("date");
 
-  // Przykładowe dostępne godziny (można później dynamicznie ustawiać)
+  // Lista godzin dostępnych do wyboru w formularzu (można później dynamicznie ustawiać)
   const fullSchedule = [
     "09:00",
     "09:30",
@@ -148,12 +150,12 @@ document.addEventListener("DOMContentLoaded", () => {
       message,
     };
 
-    // Zapis do localStorage (jako tablica rezerwacji)
+    // Zapisanie rezerwacji w localStorage (jako tablica rezerwacji)
     let reservations = JSON.parse(localStorage.getItem("reservations")) || [];
     reservations.push(reservation);
     localStorage.setItem("reservations", JSON.stringify(reservations));
 
-    // Komunikat potwierdzenia
+    // Pokazanie potwierdzenia po wysłaniu formularza
     alert(
       `Dziękujemy ${name}, Twoja wizyta na ${date} o ${time} została zarezerwowana.`
     );

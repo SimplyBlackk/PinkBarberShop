@@ -1,4 +1,6 @@
-/* RESET I OGÓLNE */
+/* Plik CSS: Stylowanie całej strony */
+
+/* Reset domyślnych marginesów i stylów oraz ustawienia ogólne */
 * {
   margin: 0;
   padding: 0;
@@ -20,7 +22,8 @@ body {
   padding: 20px 0;
 }
 
-/* NAGŁÓWEK */
+
+/* Stylizacja nagłówka i menu nawigacyjnego */
 header {
   background-color: #222;
   color: #fff;
@@ -58,7 +61,8 @@ nav a:hover {
   color: #c59d5f;
 }
 
-/* PRZEŁĄCZNIK TRYBU CIEMNEGO */
+
+/* Styl dla przełącznika trybu ciemnego */
 .dark-toggle {
   position: fixed;
   top: 20px;
@@ -109,10 +113,10 @@ input:checked + .slider:before {
   transform: translateX(24px);
 }
 
-/* SEKCJA HERO */
+
+/* Stylowanie sekcji głównej z banerem */
 #hero {
-  background: url("photo_2.jfif")
-    no-repeat center center/cover;
+  background: url("photo_2.jfif") no-repeat center center/cover;
   color: #fff;
   padding: 100px 0;
   text-align: center;
@@ -127,7 +131,8 @@ input:checked + .slider:before {
   font-size: 1.2rem;
 }
 
-/* INNE ELEMENTY */
+
+/* Dodatkowe sekcje i elementy jak usługi, opinie, formularz */
 h2 {
   text-align: center;
   margin-bottom: 20px;
@@ -244,7 +249,8 @@ footer {
   background-color: #c59d5f;
 }
 
-/* DLACZEGO MY */
+
+/* Sekcja 'Dlaczego my?' */
 #why-us ul {
   list-style: none;
   padding: 0;
@@ -263,7 +269,8 @@ footer {
   font-size: 1.05rem;
 }
 
-/* ZESPÓŁ */
+
+/* Sekcja zespołu barberów */
 .team {
   display: flex;
   flex-wrap: wrap;
@@ -294,7 +301,8 @@ footer {
   margin-bottom: 10px;
 }
 
-/* LICZNIK */
+
+/* Sekcja z licznikiem klientów */
 .counter-box {
   text-align: center;
   font-size: 1.5rem;
@@ -303,7 +311,8 @@ footer {
   max-width: 400px;
 }
 
-/* TRYB CIEMNY */
+
+/* Styl dla trybu ciemnego */
 body.dark-mode {
   background-color: #121212;
   color: #ddd;
